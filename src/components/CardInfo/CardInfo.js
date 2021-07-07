@@ -1,15 +1,14 @@
 import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import CardComponent from '../Card/Card';
 import styles from './CardInfo.module.css';
 
 const CardInfo = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if(!confirmed) {
-        return 'Retrieving latest data';
+        return '';
     }
     return (
         <div className={styles.container}>
-            <Typography gutterBottom variant='h4' component='h2'>Global</Typography>
             <Grid container spacing={3} justifyContent='center'>
                 <CardComponent
                     className={styles.infected}
